@@ -3,10 +3,11 @@
  * 引入api，供全局使用
  */
 const util = require('./utils/util.js');
+const fetch = require('./utils/api.js');
 App({
   util:util,
+  fetch:fetch,
   onLaunch: function () {
-    debugger
     // 展示本地同步存储能力
     var logs = wx.getStorageSync('logs') || []
     // 头部追加时期
@@ -17,8 +18,9 @@ App({
     // 登录
     wx.login({
       success: res => {
-        debugger
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        fetch.loginCheck('user/wxLogin').then((res)=>{
+          
+        })
       }
     })
     // 获取用户信息

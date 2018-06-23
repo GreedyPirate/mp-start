@@ -25,5 +25,6 @@ const getUserLocation = (callback) => {
 
 module.exports = {
   formatTime,
+  formatNumber,
   getUserLocation
 }
